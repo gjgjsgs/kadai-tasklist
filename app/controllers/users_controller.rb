@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:user_id] = User.find_by(id: params[:id])
+      session[:user_id] = User.find_by(id: params[:name])
       flash[:success] = 'ユーザを登録しました。'
       redirect_to root_url
     else
